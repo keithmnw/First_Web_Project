@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>PORSCHE FANATIC</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+        
+            body {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                background: #fff;
+                color: #111;
+                line-height: 1.6;
+            }
+        
+            nav {
+                display: flex;
+                gap: 2rem;
+                padding: 1rem 2rem;
+                border-bottom: 1px solid #ddd;
+                position: sticky;
+                top: 0;
+                background: white;
+                z-index: 100;
+            }
+        
+            nav a {
+                text-decoration: none;
+                color: #111;
+                font-size: 1rem;
+                transition: 0.3s;
+            }
+        
+            nav a:hover {
+                color: #d5001c;
+                /* Porsche Red */
+            }
+        
+            nav a.active {
+                font-weight: bold;
+                border-bottom: 2px solid #d5001c;
+            }
+        
+            .page {
+                display: none;
+                padding: 3rem 2rem;
+                max-width: 1000px;
+                margin: 0 auto;
+            }
+        
+            .page.active {
+                display: block;
+            }
+        
+            h1 {
+                font-size: 2.5rem;
+                margin-bottom: 1.5rem;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+            }
+        
+            p {
+                color: #444;
+                margin-bottom: 1.5rem;
+                font-size: 1.1rem;
+            }
+        
+            /* Porsche Image Styling */
+            .image-container {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 20px;
+                margin-top: 2rem;
+            }
+        
+            .porsche-photo {
+                width: 100%;
+                height: 400px;
+                object-fit: cover;
+                border-radius: 8px;
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            }
+        
+            .description-box {
+                background: #f9f9f9;
+                padding: 2rem;
+                border-left: 5px solid #d5001c;
+                margin-top: 2rem;
+            }
+        
+            .projects-list,
+            .contact-list {
+                list-style: none;
+                margin-top: 1rem;
+            }
+        
+            .projects-list li {
+                padding: 1.5rem;
+                border: 1px solid #ddd;
+                margin-bottom: 1rem;
+                border-radius: 4px;
+            }
+        
+            @media (max-width: 768px) {
+                .image-container {
+                    grid-template-columns: 1fr;
+                }
+            }
+        </style>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <nav>
+            <a href="#" onclick="show('home')" id="nav-home" class="active">Home</a>
+            <a href="#" onclick="show('about')" id="nav-about">About</a>
+            <a href="#" onclick="show('projects')" id="nav-projects">Projects</a>
+            <a href="#" onclick="show('contact')" id="nav-contact">Contact</a>
+        </nav>
+        
+        <div id="home" class="page active">
+            <h1>Engineered for Magic</h1>
+            <p>Welcome to my personal corner of the internet. While I do many things, one of my greatest passions is the
+                engineering and heritage of Porsche.</p>
+        
+            <div class="image-container">
+                <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=2070&auto=format&fit=crop"
+                    alt="Classic Silver Porsche" class="porsche-photo">
+                <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxITEhUSExIWFRUXGBcaFRcYFhYXGhoYGBUXFhgXGBUaHSghHRolHRgYITEhJSkrLi4uFx8zODMtNygtLisBCgoKDg0OFxAQGi0fHR0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0rLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLf/AABEIALcBEwMBIgACEQEDEQH/xAAcAAABBQEBAQAAAAAAAAAAAAAEAAIDBQYBBwj/xABKEAABAwIEAwYCBwYEAggHAAABAAIRAyEEEjFBBVFhBhMicYGRMqEUQlKxwdHwBxUjguHxYnKS0lOiM3ODo7LC0+IWJDRDRFRk/8QAGQEBAQEBAQEAAAAAAAAAAAAAAAECAwUE/8QAIhEBAQEAAgEEAgMAAAAAAAAAAAERAhIhAxMxUQVhBEFC/9oADAMBAAIRAxEAPwCmDzJgjKJzD7MxIaPnbooWAy4N+tli02mCYtNjvr7KM1e6IfcgiXDXUcj1/V12kBl8I3gC8gf5hyMjyWDcGsIzXmLgaXg29Y38kxlYCBHwyOkXHugO+cL9ZPmLW6XTqJeXAwMs2FtDqFMTKNr1DUAAI1noA3Qfrmm0qRcCdPa99POAUqZaH5QRsWyOZc0aaG3uisHQhziRbYbbk29R7LWNSGVeHjmJ00JiDeT+gq3E0S1xmQ0kkAbRNjy05LT/ABegQnEqYtO4sesQlhQNKm1xaSM1hq3eXRbWboargTTdYG95g5YI6Exf71Y4LEFjRMEhxB3Hv5J2PxWY5ANW/K4Mn5qMyo8HhxUIAb4G/EZ+I3OX0n5dVe/C2BHoqzhktBBN7iJ66nqdVZhoW+KmtOymo4gi2qjLVJSatCwpOQ2PwDakQcrh8Lht6ep9ypKIUwRD8ICGgOiQNtPRSuIFyEwp1aCIRXKuKEGAdPwUeUlodcSfwUbQpHVTlA2H3/2QPolFUyhGFGUDZBKFHj6mWmY+Rg+nX810OAvsqdvF89UNa2aZESQQJmNxr8oI5KWorKLgwue8GYGpBlk6OHkAIPzQfF8e1tNkOAzZiABfodL6fqykr0jUqZHT4Zyi+m5BAvfl/RBV+FwHCMpES6ToANCegXMVWMxsAHNuAYExaQI1Fgfmu95UqMNnFotIBgfEQJPmUTw7hrHeJ3MZgSLgutY323O46rS4/BUqdINc53iGgcIbO5aLHf8A0pOK4zlAlrQcpJOmxtDba9PdBYogtBPg+yJnUn4SNgPJS0RqXGXaxGpP9B/dV+IwzpPhiILmj6trTv7QpVsE06hOUWgm97EAC2t73MLTYuiKXcAtDmvyteQLm2YiTFvCPMLJ4Z0PBOUZb2gQZtf2WnxuKNWcpIAOYESYkuBOYjTxkeg6rXFBBb39UinGSocvw6U6YBdrdt8o9Qj8fTqtdmZoLENF4sL6yRb0VP2fxRol8EkQTcCwDpcB5+KI3hajC4lr2CDf6wB33k6ea3PI5g8WMjZEmBM6zukhX8RpNOXMBHQH5pK7DHnGLxrcsxcknW8z1m1o9VJRqMDCMsEk+KOogW/V0PxamWhpDYgaxY63E2MmfY8inOpHQ2lwJkWFgTMbSVxb6+BGFpgnK6W2iRymSZ+Up2HqfDlYSJnUGG5o11kmbqPFMzBri4mxk2jUgCLTHnN1DLhcNgCdbwNJJjT890TF5SYQd51bBsLxMI+j4oBOpseUqso1Q5tiTF+fXUDy+SMpOjRaUSHWQjnHXWCJ6AwPmnOe6TB+7mgquNkECbgE3kSOh6SpWKkNcHKcseITebgQLcr/ACKlruIcS0BxdAdGawGxG5kAqspMBcxn2TJtrOx6z+Cv6NMDzOvmkSQHg3kP+sdiALe+w1V2wqtGG8eYGAfiF7+d1Y0mgaCBOnLotRrE1MKViYxOc5UEMKlDkLSJUzSgIaZTiomOUgehhjgoxdh/zCfOD+ClqqFrPAeZcPu/ugmpIp0hvhF4t5oagYRZqCLnXTz1hBS4ri5ZVYCfqg1GgHL1y83GbDojaTqVKmasvgumXySCTlEA3j81ylgXDM5z5c5sfCCQZJtzF7LuHwGam1tQZoJgGDAmwkRa1vTkpEd4XwzIS95zGTEkkAeHbSfCL9E/G0KVbMw/V1OtxcWPIwUa3SJnzUVLDtaSQNdblawUj+HPFVpbGURYnmZNtDqbHz6IjiFRjf4UiXc4gDUA6bC3JQcZq+JuUukHRo1F7z7j1Vdxjh1Q1TUD4kCA4i+W5yNP1ZgR1KgpsQ0d+CD9Yu8i3SI8tufmUDj8RD3SCXEunTfcEam0qTilLI8gk2vmJgEwPz+RVXiqdgDIM2E7bgAgX09CuYKFMNm8QJOkTqWnkNvNXNOoA12Rsy0AGYNzlOUjz0E281mqJDXEEZswgTOhIuNL9VZtw9RuVpzB1nO8Q+HLcAgSDYeuy1DGphxYGvY3Llm05g2WhoIAmQAb7SOS7w/LRMtJInxCCQ0EmBMjNpefNHcBfSe0QQ4tJmx1/O3XZW7r7fJdJEY3HYil3jv4bnXnMH2M3tdJWOM7K0aj3PzPEnQGAPIQurOVWR4lTzFovN7RYiYmeYum1qWZxaDlG8w6GzEeZRlOnLw4gwBtmNm+I+VyoXlsktm97+3t+a5Y62utpgCxt5aSP6LrKYna35CfVcpRedhb0v8AdPuk0ffz/VlWanpUwAYaNtIF9ZiNwDJ/NSU3JrdB66W0Gh9XfeutCqlVqkCdoPnpKEOD8Je90WMNne2WTz29VLUqDMLSBeOg3Prf0CmDHPuYgEG4jnIiTm87c+iJh/D8PlbJaMxuenIegsjQoWOUhcAJJgC5JQPaUTTcncNwjarC8Pm4DWtAOYETmLiYa3rfyV5heBsIGaBzu9x/1NLB/wAq3OHKs3nIqWFOJutNR4DR5n0Df/MCimdn8Odc3sz8GrXt1n3OLIh0KXMrviPZgkHuTB20uL2gxfS8+iyfEsFjaNM1XgQ0gODgWxe9w8yOoBU6U7xZNJUwqLDP7TV2Eh7G2MBwD4IAMkBx8ryjMF2rLntaQwNcLPcSBmn4bA8x+Ep1XtGsqPUjKf8ADJ2zX9lSt4qTT700nZLyWeMACxMC4AMTItIRnDeL0atNzWVAXBwOXQjY2N1MXViwomk210Fh3opumqCZw6rhcoXOXGIJieaaXbSk0pkKoFrEt2B/tv8ArdUHGn5jPiNRpIazKCIkEnTXQWNwB6aTHUc7cpJA6fmhcJhMggmTMzYbQB+uagx+L4XVqySMrspN9ZF/h1FyYhU1Ck92VzWSWNuTewMTG58Q0XpVHCNbULwNRc3Jn1WSrUu5xoYIawuGVsiC1wmbCQAbAQdFmxqKzi2FYadOqx0gEd4AQ2JIFm+w0ixTuD0RUxADnGIOYgkgwAABqNSOkK57Y8NY1gcwBud4D4ytkaybXgxppKi7I0M1TMbim2LgaucI21Aaet0/1i+MarhWBZSbDBA+ekST5ACOiLdUAFym94hMfUytLomASurmranH3NJHdk9bX+aSonYirPgpOc3nAvz+crqxrWFhmeB7gHAyQdL875bIIPVpi2kUG5swBsLjbpExHXdVDT0noubdPpai+9/Lf5KVhTSBqN9+p2UzTe0RsoRLUZZvkT8wPvspu5gTME2bG9ibGddfKFHxSo5tBzoyubmBzC7XE8iLTJI/U5/B8YcbOdHX5+i3x42peUi7o4EC58TvYD+XnsiWhVzMa+Js4c/7J54k4fUB9Vfb5J3g8BLEAlsD6xDR6/0lVtfjFoyQTYGefojKPEXF7ZcSGXibAxYgfrVa4+n9s8uf00nZJgbUfSGjXU2jyyhbllJo2XnvZPE5sRVcTq5h+QC3FTGAartNxxq0pRyCIYRyVVTxKJp4hSyrLFi0pzmBwLXAEEQQRIIOxCFZVUzKqxY1KoOK9jcO6gadKmGuJBnQ2JgnnEmJWDx/YyMPTa5ppvzOu2JdLtHjnEQfNexhyC4rw5lZsOm2kGDafzKzq9Y8UdwWtRJ7vEuzSGgkkE0yIyvbebaXgbKLj/DHUjTxTCDN3BgyxljMC3SB056Rps+J8He1kv8AizFoj4S1vM7OGvkDyQmCxdVktaNSWPH2idiDadRPkmshuDcSFVoJjNaY0PUK6puWG4hT7h/f4YnJPjpn6v2rcpFxt6FafhnFG1abXsOtiOR3Clb41bZ7KIvuoxUlRVX8ijQwVIHVMz7oXDumZPJSEICHPTnOHJDGpZStaqhs3iY8lm+11ElzKjYgeFx3n4mg9In3WiewCXb6mN0BxjDB2HeAJIEjzBn81L8LPkB2ixBfQpuaQA4EmRJkCNAep9lL2QpZaGa3jJceYOgHsJ9VSFzjTax5f4ZDQ0sEA3uC3XTe4Wj4JTIpMEy0DlqZkkHkpPnWuU8LHvRdC4+oe7dGsGJtta6c5uqixtQNpkG40lbvwxEeAIFNgbplEeySz9TjhBI+kuZH1QGkD3EpLPatdYn4ufA1sACJsDY2gTN9TfoqPOrfiFxIEtiMwzu0E6kRG58gqkwsNVLSqbHT+oVo2ic4It4WmbmDlBMyL+U/kqpsKxqcSZTHxCcrGkEBwPMiDytqPwTCAuNNmi9wu0uAYJcYhwzOk8z57nUrNU8OVcY3HioMosADpbxGTOUTpNuirmNI/wDuepa1dOFxjknwr8u6Y/irRBqfBmIy28URrFwL9FAaZJkPA8z/AO1O+hTqWHz3+S1eXhjGv4X22w4AbSbRodAGtn+c3J8yjuMcZGJw5LnAupkFjpBmSGluYdDI6heeO4O0/Vb6PIQmLwzaD2kyGn7JmSLiNvf2Ks5+MwvF6D2JxH/zTmHUsa70Di38F6JWoN3MjWJXjvZnHNn6SBLmSAO8e15BEkAtbG24i61bu2+HMZ8PiGxrkdRePUHKfmFqc5IzeOtuMQOY9wpqeNZ9oe6z+A7Z4LJIo18umZ2GdUAdyzNcb9FaYL9onDzbvmN86dWn99Mj5p3TotmYxvOfQqUY5o1MeYKfgu02Dq/BiabugqNn2mfkgO03GsGxsVqrmDn4wD6yJWezXVaN4rTGrwPOybiO0WGYx1R1ZsMaXOgyYAmw3XmHGOM8KdZtSsWx9R+W+xOYeKerlhMc9hJ7nE1WggyKhY6R/LFukH1WdivaKvbehiKTgKFbIRIcQGWic4zQsEztZg2FzO+eabsrr0KrHR1MEeukhYylSqOsMXeI23GlnzG2iY/hOIdF3OgRenYRsDJsngxrsZ2nwpDnBodmnxlwYCbCYgwdLbqi4V2gZh6mZrj3bj4mZahHQNdl15eyrW8BxJ0pz5taFccM7PUnlja47t3hk2AcfrRBP4eYQxtuFcdoVx/DqNcYuJ8Q82m4TsNjW4nO2g5pewva6m+Wlzmky1r9BI0kR15VfC+xNOnUFWjW7yLhoLR6GD+Kq6/ZrFUKteo0hpqh0NOYEFxu5pIEkAugW11SSb5atajhuNpvbmAIMw5p1BiYI+aODt1QcFwzqVMCo57iGtaMwFmtmGgNmwk7lGs4gz7Y9TH3rCrKrBXW1o3QlOuHaOB8iCpHOi+quqIFcEhcLRdp0cCPQ2Mn1+aH724sIlKu7bZNTGYw9N7ZEaCOd78hawG/nyWg4U4BgmPhbcTymNOusm8qixRc1z25fizEGQ2xOut7zy/K4wLvAwX+Fuvlz3WY1Vgakqv4riHAZRIJEiJveANIPPUaI0earWjO/Q7uk9IABFwTyI5FW1JA9Hs5RLQXB8nWDHyKStYPNcTwKjFv/wCka6TuGyYhouLXkD8NlQvN4jRaDE1Gtc9sM3MyQJgWjT31VLj6LabTUmQGlx9pWW1RxLizWHLmAUVDEsd8QnzJP3rOMpGo4vebTfz5BGuo5GhzSY08luRzt1a4/FWgWHRVrazoJET181HUqyFyjof1uiH4dxDYyht5JBcSfOSQpDXIUZMJRKokGLKf9LkQQCORv96Fc1JgQWWFxga0hoDRyAi8jkjMPjM2sefL12VLlOnkig8NaZuORUF2eK4ljv4L3AiIeANCNCR8TfNEYTs3icQS+piaDXuMkVajmk9ZDC35rJfvktsLAaAI3C8dJ3/BBv8AD/suxNnd5SqN5U6sSItDyI15jZW/Df2f12mC6sxpAuyrSMGBObxAkG9gNl51huPVGGWVXNPQkfctBw/9oGKZANQPH+IX9xB+9JhjVY39lb3SRVpuOxLCw+pZclUeM/ZzWpXdhjUE/FTfnt/lN491a4H9oQd8eZh5/E331+Su2dqXODQyp8ZADhBiTEjaQtzhvwzbjA1OH4Sg3M9hBGstfrrdqG/+KcOPha6NLAj7/wAl7CypS7sfw2utcvGZxPVxufNUPGuw2Frh1SnSayqWmADDHHY6GDPRTLDwwuD7RUKkzmaQJu0kEdCFzE8Zp/VaTsJa4D5jRUuN7ykTSqsbRLTA0O+khpkdfdDVcIAHF5quIGaWBmUSJDrXyweQU2rgrE8ca0luVzd/Dp6Aj5hE4XthVALG4hxbHwVWB7Y0iDIQLuG0iYZi2kajO3IZjSC7KNrz5Sq/DlrSQ6H3izvSx5KeRdntC9xP8MN/6p+UD+VxI+7yXf3uXDxQDzPxRy8AHzlV+J4dUI7xtMBtjLagdt00P9UG3Bkk56mV1oDgXT6wmqKrVWk5u+y32P5tDh81tOz3ZutiG5sPj5IHwPgn1GYyOokWWEqcIImHjraPkn8KrPoPDmlwIMgsInTWAY/FB6JjuBcUw7c76VOq0CT3boNrkkGPkCqyh2kpOgPD6Z/xCRPKRv5wtX2J7furAUq58dsjzbNsJ2N7TM6TOqsOKtwr67M1FrXF3jcBlLuQMRJm862srOOnbGF4g5pcXAghzRJNQgbgQAb6aImk8WgyABHsPZa7tE3CtyUhhGEvnLkPdutFg+RLjtJvCy2Iw7A1tWmSaToiRBbsGuB9vOyl42NTkdUcSLTNrjZRcPbDSZ1Jgcg221uemqZWIiwuJGvOCNPW8FElmWRytzPqeaypxf1STWMEJKgCvii2of4ZtAJI0kWBi4FjbmVm+11WMO4AAB2QCNIJFttgbK+r4gF4kwSRcwDM+Gwc2WwSIgndZzthii9oaQLPEkWmC4fDtaNbzKknlbfCp4VgiQ0iJLg1sidwHuA0nxan8VPxGixtWrRYZALmHw5f4jNYbJtP4qw4EzLkd4fBlcQZky2YG1yd+Sh4xg2Nq1K7akmrXLskfCHZ3G/mQPRdHNli9F4V2iExbYe4dV2lVhQFvN07NZBuJBN0s5QGhwTGkyhu9KQrFAe510BxGuSco2+9S0cRrKCpklxO/wCJQdwuFLzyG5VnT4Q3Z1x1UuBwwMguLWNs4gCXOP1Wzaep0VizC0zZhc2pGYNcQ6RyJA8JO06pgpHktMFdFRWPEaQewP0I1ttzKqRT5Pb8x94TAbRxRCueB8Rc2o2DYkT5zYrOMpO2g+Tmn5SiMOajCDlcIIOhiyk8XR9AdnMW2pSDdxtc+G+g56Dp6q1xTzToue0ObAOXMBAPON9l5nwzi7mZa1I2N4Bu07idjtyK11Hti2q2HwT/AIszemgkHzsu9l/pzl+1DxWizGVWl4jOwOcQ0HK4HKTlOo0kfMESrrhvYXAjxVwXPd9Zr3BknYD4mnoSdbG8KPg2OwtGo9pe19VzTlYAQAJEuv6WurFmOGmx22Wbx1dKn+zjho+o8nmaj9ecAoTE/suwRJNOo+nedn383XhGNxrg7KKrgIkDwkiDEEkE72PQqZuIf/xne1P/AGKdDsBo/s2oBwcaunIZZ/0FpG++6tndj8K0Q2iHWIJDsjxIixkZv5j6pjXuP/5FQelL/YpGz/8As1f+6/8ATU6rqpq/srwL2j/pGHmH39ZJbPkhK37H8GR4atUH/FlI9gAtK0f/ANNX3p/7FOxjd8RW/wBbf9qnVdeUcb/Zni6IzMqNqNHR0jrvb1VnwXtG17Rh8dTIqNGVlZgvIsA8GAHEixmPJekCm3/j1j/P+QWf7UcIwZYamI79wnVg7xwA3IDSb9OXmpJYvyCwHEWYumHU2Gq9py1KRhrmOBylxDrjy80PxkCnU7oANBFTvBIcA47kjQk3jfVYjtFxLCU8tXB4muMQwlvfECmXN+y8ts4jScokQDMSpcJ28qlndV8lVnOkwNmI1gb9I31332S8LFm9k2c1trjmLSJiDcf3TmuO6Bx3FHvzYh9MUmu7sAU5cADTgNk2zHKSZuNEE3jrNDJ/lIP5fcuWfTerd2ME2a49QElSt4yzrqdjuZ5JJia22G7KUhd+YyCJJkgTZwDRY79IVd2w7K0nUKtUuqhzKbnhznZ8xYZALovIB8pWcdx/EHWvU0A+I6DQeSixPGq72uaa1QhzSD4zcEEQRyW8LdO4fS8FVrXwW1cO4Alo+LDNcHBp1iHe6zXHqD6VdzHumMhEG0PaHg/NWx4ZUrYZ2KpQXBtNrm75hb/wZQBzCqeP43ve6keINAJuCQJyh3UXE8o6JYyqceJfM6j9c1CxvVS4gyZQ+bZRRBTYTJI6KVrigYkn+ibCBc1zBak8r+3910jkn4GkZIIiQP18kGp4Twp1SlVyNzmhRdVLdc1Q3iBrAMxvkjdHdleJuwOCrYgNa6pXIEvGYZScozDdty5P7MY2phq9WpOR0uhjgRnbIgDlaSD/AIVZ4XgrsVh8Qym3O5vd1KbXEAkio1z2AaXDXtE7wrRk6RzOe23iBmIgOuHRO2YFZyoIJC0/EeF1cNUa2pTdTBLsmb6zZEmPMkX5LPcRbFQx+vZAPKno5h4gHRzAP3ocFem/s94/h2Yfuarw0tcS0FsgyZMmP6adV8/8n1eXpcO3Hj2/Tr6PDjz5ZyuKHs1xdhPc1SPEfC47O0gk7H5LSVMNlIktAJABdEX0v1/FSU24eo5zXPYR9Q5GgbnLJM76rM9rW0mGmGNa0yTIAExl5arn/H/Id+c9O8X0+v8AjenC+pOXw1FSi5kOzUnHQZHNceeg2sk3FO3BKyfBSK1YB12gXsDEkD81q8J2fp1KxYAMgbMxF5AiV6Pufp5vQRRx2XRseUBS/vmPrAeoRbOw+HIkgeWY/msB27wDcJVa2i+xBzCzgDaImefyCe5+jo2v7+A1qNH8w/NDVu2NJtu8JPJrXu9oBXlRx1TXNHlb7k1/Eaxsaj45Zj+anuL0elYjty8fDQqO8w9v3tCqsT+0LGt0w7WcszXn5khYo8SrDSo4Tyc4fioq2OqOMucXHmb/AHrN5tSNdV7f8RqNILKLmxeac29XKtw3afGsLnU6rG5hBbaBM6NJgHrKoPpDzvGyjJJ1WdUXiWVHHNUIkzJLmyfZNo4WYIk+QncfNC5F6C3iGB7mmG1GtIDZbB1GoMBMLaCw3G3lgoVjU7lsd2NmujKTFhGphWFXglZt3UKgB0OR0e8ILGVaWKqMpMqBoLpe8hwa1oHlJOuy9aodrcNcGoGgEal14Iu2BpvFlYPKRgT9l3+k/kkvTavafCEznP8ApHquppjy92HKgfQdsrt1EpvcFMGYbxWthi9rXFrX6jY3mCDY3uPNUuIxZe4vcZP4reVcKCLifNAVeEUz9RvsmIxpqqLPey2DuDN+yoX8IHJTFZc1Cud4VoanCCg6vDiNlnBVjElOGJG4U9TCHkoHYYpokY5p3R3CKf8AFAkGQd+TSQqh1EovhVYsqNJ0B/XyVlHpFDh9GlTrPqOa2ocRXqUgR8dNrmMy+ZzPj/KUBjOIPogVwS34myAQbPy5Y8x81ccYw5xWDY6l/wDUU2ZWt3fls+Bu8Bub/tGqgrZ8VgjLh3jTScXGAMrT3T3HoJDieTXErVmIC41x12JFJznF2QOF9rtKo+Igkg3/AF5IriLAxwptjwgaaEm8zvaELjhby8llQULi4Kkbpd8gmo1HDRxHkSEfL8t6jj0JJHzKrG1ug/Xkp24z/A33f/uVglo4qpTJLHZSdS0AH3AU376xAua9T3QhxQ+wPd35qN1STZoPmTb2ITUGnj9f/jVPdA1sVmMuLnHmTK6WH/ht93/71HkP2B/zfi5PKuZhyPv/AEXJHIp5Yfsj2/quhp5D5KBh8j7ph8lKZ5N/5U2fL5IIyei4HnkpHHqk2meagaHHknMzKWng3EwLk6ALR8I7OmxeIGp5n9frmrBJ2dwZDS8iJsPxVsaZRYpAWFgud2tIDylJGd2kqCy1McxG9yFw0UAPdprqKO+ilN+jlBV1KcbqD5q1q4Lmo2YaNCgrXUHHZQ1MGSrssSyBBmqnDeqFqcMWrewKF1DopgyFbh6CqYQi8LcOwp5Ierw2dlOq672Q41lAFs7CCLAkR9dgJucvhc3UiCLgIzjPE8JTJq0pzkuIAJaA5wuYF/wueZnNY/glQXYAekwqfF06w+Njx1gn5poXel7y485Pmm1nz+vb9dVA0kCMp9iuHP8AZPssgeuYTAVP9HduF36OUEAcnKQ4crndFA0KSm6LpndlcylBKQTq5dZSbu4qGCntBQGMwtLd7vZq5iqFEN8D3Zv8UR8ghCCuGmUEJeVySpxhynDDFBzCYapUMMY5x6D7zoPVbTgPABTGasA5x+rAIaPxPVZKjSLTIkeVlfcP4w9tnOJ87qwaqlQY34Whvk0D7lKqrD8UDuSMp4kFaROWrganMqBPCoiypKfKkgtu4lPFAKYHouRKCLu0u5U8JEIB3Ukw0OiKAHNPLEABwoOyacG1HFgXC3qgB+htTXYbyR4b1/snmmN+n3Ota32boKh2HhROoq7+jtm/6ufwi/8AZM7hvhkT9qx6f19k0UbqPRC1sOeS0vcC3rMjy525pj8M2xj7twJ1HnqgyNTAg6sCGfw0citd9CF4jXcbbRy30vomnCNiNwIMiL2MzP8Am5WhQYl/D+igfw48lt34MSLCLT+K5VwLYkBoJmxFh8Nr25xP3pisG/h5GyYeH9FvP3fT5C9jY7eIkesDyQ1Pho1yicxkdIsBII568gmDFfu5c/dq3R4cNmixfFjcWyyD6pp4azMLW8XW0nKYP3HkE6msKeFlIcNK3p4ewGzQRJ2A25xuT8guM4YzMbSJvIERN4jeOg6JgwzeHpw4eFuW8MAjwtNjsLmBA9Nz59E2rwmwsNNR6W8xz6nknUYtuBHJSNwAWu/c5TmcHTrEZH6CkOH9FsP3SBz9k4cNCuQZOlgCj6FBwWip8PEKRuFA5IKejSKMYxWIoBdFEIAciSsPoySAsMKeGpJKDhaV1rTukkgeAkWlJJBxrFKGJJKhr2jkuBpSSQJoT8i4kg6Gj1XDTCSSBvdtTH0wEkkHfo4Ka+gBskkoGtoDcJ/0cDZJJB36OmdyuJKhdxHVcFJq6kgd3MbLopBcSQJ1FMNJdSQMyrrWJJIOZQkymOSSSBxb0Xco5JJKBAfr9FJJJB//2Q=="
+                    alt="Modern Porsche 911" class="porsche-photo">
+            </div>
+        
+            <div class="description-box">
+                <h3>Why I Love These Cars</h3>
+                <p>There is no substitute. I absolutely love Porsches because they represent the perfect balance between
+                    daily usability and track-ready performance. Whether it's the classic air-cooled 911s or the
+                    cutting-edge Taycan, the design language and "form follows function" philosophy are unmatched in the
+                    automotive world.</p>
+            </div>
+        </div>
+        
+        <div id="about" class="page">
+            <h1>About Me</h1>
+            <p>I'm a creator and enthusiast who values precision and design. When I'm not looking at car specs, I'm working
+                on new projects and exploring technology.</p>
+        </div>
+        
+        <div id="projects" class="page">
+            <h1>Car Projects</h1>
+            <ul class="projects-list">
+                <li>
+                    <h3>Project One</h3>
+                    <p>I plan to buy a 1998 Porsche 997 911 Turbo and restore it its full capability</p>
+                </li>
+                <li>
+                    <h3>Project Two</h3>
+                    <p>A short description of this project.</p>
+                </li>
+            </ul>
+        </div>
+        
+        <div id="contact" class="page">
+            <h1>Contact</h1>
+            <p>Feel free to reach out through any of the channels below.</p>
+            <ul class="contact-list">
+            <li>Email: <a href="https://john.muleshe@strathmore.edu">john.muleshe@strathmore.edu</a></li>
+                <li>GitHub: <a href="https://keithmnw.com/yourname" target="_blank">keithmnw.com/yourname</a></li>
+            </ul>
+        </div>
+        
+        <script>
+            function show(pageId) {
+                // Hide all pages
+                const pages = document.querySelectorAll('.page');
+                pages.forEach(page => page.classList.remove('active'));
+
+                // Remove active class from all nav links
+                const navLinks = document.querySelectorAll('nav a');
+                navLinks.forEach(link => link.classList.remove('active'));
+
+                // Show the current page
+                document.getElementById(pageId).classList.add('active');
+
+                // Add active class to the clicked nav link
+                document.getElementById('nav-' + pageId).classList.add('active');
+
+                // Scroll to top when switching pages
+                window.scrollTo(0, 0);
+            }
+        </script><!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        
+        
+    </body>
+</html>
